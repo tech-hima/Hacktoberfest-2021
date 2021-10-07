@@ -1,0 +1,50 @@
+
+#include <stdio.h>
+
+int main()
+{
+    int n , i ,j,p ;
+    scanf("%d",&n);
+    for(i=1; i<=(n) ;i++)   /// this loop is to print the upper triangle for n rows
+    {
+        printf("\n");
+        for(j=1; j<=i ;j++){
+            printf("%d ",(n-j+1));
+            p=(n-j+1);
+        }
+            
+        for(j=i+1;j<=2*n-i;j++){   // repeat the last element till 1st, 2nd last etc column
+            printf("%d ",p);
+        }
+         p=(p+1);
+            
+               
+        for(j=2*n-i+1; j<=2*n-1 ;j++){
+            printf("%d ",p);
+            p += 1;
+        }
+            
+    }
+    
+    for(i=n+1; i<=(2*n-1) ;i++)    // this loop is to print the lower triangle in decreasing order for last n-1 rows
+    {
+        printf("\n");
+        for(j=1; j<=2*n-i ;j++){
+            printf("%d ",(n-j+1));
+            p=(n-j+1);
+        }
+            
+        for(j=2*n-i+1;j<=i ;j++){  // repeat the last element till i equals j
+            printf("%d ",p);
+        }
+         p=(p+1);
+               
+        for(j=i+1; j<=2*n-1 ;j++){
+            printf("%d ",p);
+            p += 1;
+        }
+            
+    }
+
+    return 0;
+}
